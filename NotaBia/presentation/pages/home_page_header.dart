@@ -1,38 +1,30 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cheatsheet/presentation/theme/sizes.dart';
 import 'package:cheatsheet/presentation/theme/colors.dart';
 import 'package:cheatsheet/presentation/theme/l10n.dart';
 import 'package:cheatsheet/presentation/theme/fonts.dart';
+import 'package:cheatsheet/presentation/widgets/edit_button.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cheatsheet/domain/types/memo.dart';
 
-class HomePageHeader extends StatelessWidget {
+class HomePageHeader extends ConsumerWidget {
   const HomePageHeader({
     super.key,
-    required this.onPressedEditButton,
+    required this.memo,
   });
 
-  final void Function() onPressedEditButton;
+  final Memo memo;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
 
-    //ページタイトル
+    // ページタイトル
     const homeTitle = Text(
-      L10n.Cheatsheet,
+      L10n.NotaBia,
       textAlign: TextAlign.left,
-      style: BrandText.xxlBold,
+      style: BrandText.xlBold,
     );
 
-    //編集ボタン
-    final editButton = TextButton(
-      onPressed: onPressedEditButton,
-      child: Text(L10n.edit),
-      style: TextButton.styleFrom(
-        textStyle: const TextStyle(fontSize:Sizes.p18),
-        foregroundColor: BrandColor.wainRed,
-        alignment: Alignment.topRight,
-      ),
-    );
 
     return Material(
       child: Container(
@@ -44,16 +36,16 @@ class HomePageHeader extends StatelessWidget {
                 const Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(top: Sizes.p60),
-                  child: editButton,
+                  child: EditButton(memo: memo),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: Sizes.p80,
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0), // 左に20ピクセルのインデントを追加
+                    padding: EdgeInsets.only(left: Sizes.p20), // 左に20ピクセルのインデントを追加
                     child: homeTitle,
                   ),
                 ],
@@ -63,7 +55,5 @@ class HomePageHeader extends StatelessWidget {
         ),
       ),
     );
-
   }
 }
-

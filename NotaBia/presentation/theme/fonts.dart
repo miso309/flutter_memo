@@ -1,64 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:cheatsheet/presentation/theme/colors.dart';
 import 'package:cheatsheet/presentation/theme/sizes.dart';
+import 'package:cheatsheet/presentation/theme/colors.dart';
 
+/// フォント
+class BrandFont {
+  static const general = 'NotoSansJP';
+}
+
+/// 文字スタイル
 class BrandText {
-
-  // XXLサイズ 太字
-  static const xxlBold = TextStyle(
+  static const xlBold = TextStyle(
     color: BrandColor.black,
-    fontSize: Sizes.p40,
+    fontSize: Sizes.p35,
+    fontFamily: BrandFont.general,
     fontWeight: FontWeight.bold,
   );
-
-  // XLサイズ 太字
-  static const xlBold = TextStyle(
+  static const lBold = TextStyle(
+    color: BrandColor.black,
+    fontSize: Sizes.p20,
+    fontFamily: BrandFont.general,
+    fontWeight: FontWeight.w500,
+  );
+  static const lBlue = TextStyle(
+    color: BrandColor.enabledBlue,
+    fontSize: Sizes.p20,
+    fontWeight: FontWeight.normal,
+    fontFamily: BrandFont.general,
+  );
+  static const lGrey = TextStyle(
+    color: BrandColor.darkGrey,
+    fontSize: Sizes.p20,
+    fontWeight: FontWeight.normal,
+    fontFamily: BrandFont.general,
+  );
+  static const m = TextStyle(
+    color: BrandColor.black,
+    fontSize: Sizes.p18,
+    fontWeight: FontWeight.normal,
+    fontFamily: BrandFont.general,
+  );
+  static const mBold = TextStyle(
     color: BrandColor.black,
     fontSize: Sizes.p18,
     fontWeight: FontWeight.bold,
+    fontFamily: BrandFont.general,
   );
-
-  // Lサイズ 太字
-  static const lBold = TextStyle(
+  static const mBlue = TextStyle(
+    color: BrandColor.enabledBlue,
+    fontSize: Sizes.p18,
+    fontFamily: BrandFont.general,
+  );
+  static const xs = TextStyle(
     color: BrandColor.black,
     fontSize: Sizes.p16,
     fontWeight: FontWeight.bold,
+    fontFamily: BrandFont.general,
   );
-
-  // Mサイズ
-  static const m = TextStyle(
-    color: BrandColor.black,
-    fontSize: Sizes.p14,
-  );
-
-  // Mサイズ 太字
-  static const mBold = TextStyle(
-    color: BrandColor.black,
-    fontSize: Sizes.p14,
-    fontWeight: FontWeight.bold,
-  );
-
-  // Mサイズ グレー
-  static final mGrey = TextStyle(
-    color: BrandColor.darkGrey,
-    fontSize: Sizes.p14,
-  );
-
-  // Sサイズ
   static const s = TextStyle(
     color: BrandColor.black,
-    fontSize: Sizes.p12,
-  );
-
-  // Sサイズ グレー
-  static final sGrey = TextStyle(
-    color: BrandColor.darkGrey,
-    fontSize: Sizes.p12,
-  );
-
-  // XSサイズ 緑
-  static const xsGreen = TextStyle(
-    color: BrandColor.black,
-    fontSize: Sizes.p12,
+    fontSize: Sizes.p14,
+    fontWeight: FontWeight.normal,
+    fontFamily: BrandFont.general,
   );
 }

@@ -1,3 +1,4 @@
+import 'package:cheatsheet/presentation/theme/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cheatsheet/presentation/theme/colors.dart';
@@ -6,9 +7,7 @@ import 'package:cheatsheet/presentation/theme/sizes.dart';
 
 /// イベント参加の履歴 1つ分
 class SettingMenuSection extends StatelessWidget {
-  const SettingMenuSection({
-    super.key,
-  });
+  const SettingMenuSection({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -17,43 +16,44 @@ class SettingMenuSection extends StatelessWidget {
       padding: const EdgeInsets.all(Sizes.p2),
       decoration: BoxDecoration(
         color: BrandColor.white,
+        border: Border.all(color: BrandColor.lightGrey),
         borderRadius: BorderRadius.circular(Sizes.p20),
       ),
-      child: Column(
+      child: const Column(
         children: [
           ListTile(
-            leading: const Icon(CupertinoIcons.gear, color: BrandColor.wainRed),
-            title: const Text(L10n.setting),
+            leading: Icon(CupertinoIcons.gear, color: BrandColor.enabledBlue),
+            title: Text(L10n.setting, style: BrandText.m),
           ),
           Divider(
             height: Sizes.p1,
             thickness: Sizes.p2,
             color: BrandColor.lightGrey,
-            indent: 20,
+            indent: Sizes.p20,
           ),
           ListTile(
-            leading: const Icon(CupertinoIcons.cloud_upload, color: BrandColor.wainRed),
-            title: const Text(L10n.iCloudSync),
+            leading: Icon(CupertinoIcons.cloud, color: BrandColor.enabledBlue),
+            title: Text(L10n.iCloud, style: BrandText.m),
           ),
           Divider(
             height: Sizes.p1,
             thickness: Sizes.p2,
             color: BrandColor.lightGrey,
-            indent: 20,
+            indent: Sizes.p20,
           ),
           ListTile(
-            leading: const Icon(CupertinoIcons.question_circle, color: BrandColor.wainRed),
-            title: const Text(L10n.help),
+            leading: Icon(CupertinoIcons.question_circle, color: BrandColor.enabledBlue),
+            title: Text(L10n.help, style: BrandText.m),
           ),
           Divider(
             height: Sizes.p1,
             thickness: Sizes.p2,
             color: BrandColor.lightGrey,
-            indent: 20,
+            indent: Sizes.p20,
           ),
           ListTile(
-            leading: const Icon(CupertinoIcons.heart_fill, color: BrandColor.wainRed),
-            title: const Text(L10n.upgrade),
+            leading: Icon(CupertinoIcons.heart_fill, color: BrandColor.enabledBlue),
+            title: Text(L10n.upgrade, style: BrandText.m),
           ),
         ],
       ),

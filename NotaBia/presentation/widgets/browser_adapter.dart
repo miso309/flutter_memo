@@ -1,5 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:cheatsheet/presentation/theme/sizes.dart';
+import 'package:cheatsheet/presentation/theme/colors.dart';
 
 /// ブラウザでもスマホと同じ比率で表示
 class BrowserAdapter extends StatelessWidget {
@@ -18,15 +20,15 @@ class BrowserAdapter extends StatelessWidget {
         body: Center(
           child: AspectRatio(
             // テスト表示なので適当に
-            aspectRatio: 9.0 / 16.0,
+            aspectRatio: Sizes.p9 / Sizes.p16,
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.black,
-                  width: 5,
+                  color: BrandColor.black,
+                  width: Sizes.p5,
                 ),
               ),
-              child: child,
+              child: child ?? const Placeholder(),
             ),
           ),
         ),

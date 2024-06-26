@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:cheatsheet/domain/types/memo.dart';
 import 'package:cheatsheet/presentation/pages/home_page_header.dart';
 import 'package:cheatsheet/presentation/pages/home_page_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
-    super.key,
-  });
+    Key? key,
+    required this.memo,
+  }) : super (key: key);
+
+  final Memo memo;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +17,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         children: [
           // Header
-          HomePageHeader(
-            onPressedEditButton: () {
-              debugPrint('編集ボタンが押されました');
-            },
-          ),
+          HomePageHeader(memo: memo),
           // Body
           const HomePageBody(),
         ],

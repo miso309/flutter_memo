@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:cheatsheet/presentation/theme/fonts.dart';
-import 'package:cheatsheet/presentation/router/go_router.dart';
 import 'package:cheatsheet/presentation/widgets/browser_adapter.dart';
+import 'package:cheatsheet/presentation/router/test.dart';
 
 /// アプリ本体
 class App extends ConsumerWidget {
@@ -20,7 +19,7 @@ class App extends ConsumerWidget {
         return BrowserAdapter(child: child);
       },
       theme: ThemeData(
-        fontFamily: BrandText.s.fontFamily,
+        fontFamily: 'Nato Sans JP'
       ),
     );
   }
