@@ -5,8 +5,8 @@ import 'package:cheatsheet/presentation/theme/l10n.dart';
 import 'package:cheatsheet/presentation/theme/sizes.dart';
 
 /// イベント参加の履歴 1つ分
-class MainMenuSection extends StatelessWidget {
-  const MainMenuSection({
+class MainSection extends StatelessWidget {
+  const MainSection({
     super.key,
   });
 
